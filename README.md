@@ -33,10 +33,12 @@ https://imgur.com/a/LO2hvVz
              
 
 ## Fluxul de date
+```javascript
 axios.post("http://localhost:3000/books", this.state.newBookData)
     .then((response) => {
       let {books} = this.state; 
       book.push(response.data);
+```
 
 Metodele HTTP folosite sunt cele de get și post.
 
@@ -44,6 +46,8 @@ Metodele HTTP folosite sunt cele de get și post.
 ## Capturi de ecran din aplicatie
 
 https://imgur.com/a/odwqbMS
+
+https://imgur.com/a/CTdcmvf
 
 
  
