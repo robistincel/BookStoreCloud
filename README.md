@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Book Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introducere
 
-## Available Scripts
+Aflându-ne într-un context pandemic ce ne îndeamnă la izolare sau la petrecut mult mai mult timp acasă în solitudine, carțile reprezintă un bun refugiu spiritual și mental pentru noi, de aceea, este foarte important ca oamenii să aibă acces ușor la achiziționarea de cărți, fără a trebui să se deplaseze la bibliotecă sau la alte magazine destinate. Astfel, aplicația realizată de mine reprezintă un online-shop pentru cărți, prin care utilizatorul poate vizualiza și rating-urile cărților prezentate.
 
-In the project directory, you can run:
+## Descriere problemă
+Pandemia a avut ca efect imediat închiderea încăperilor ce pot reprezenta pericole din punct de vedere al aglomerării sociale, printre acestea incluzându-se și bibliotecile sau magazinele de cărți. De asemenea, odată cu sporirea lucrului în regim de telemuncă, majoritatea petrec mult mai mult timp acasă, astfel, preferând cumpărăturile de tip online. 
+Aplicația realizată de mine vine în ajutorul acestora și nu numai, prin facilitarea accesului la o gama largă și variată de cărți, precum și achiziționarea acestora.
 
-### `npm start`
+Pagina principala a aplicației:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Am ales o pagină principală simplistă, cu o listă de cărți, două butoane pentru editarea și ștergerea cărților și un buton pentru adăugarea unei noi cărți.
+ 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Descriere API-uri
+Pentru partea de back-end am folosit fake Json(JsonServer), iar cu ajutorul acestui server am realizat următoarele API-uri.
+### •	API-ul de POST, ce permite publicarea cărților din Json
 
-### `npm test`
+https://imgur.com/a/4r1mAqJ
+ 
+### •	API-ul de put – ce are rolul de a updata cărțile după ce acestea au fost editate de către utilizator
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://imgur.com/a/8S36sNs
 
-### `npm run build`
+### •	API de delete – ce are rolul de șterge cărțile din tabelul paginii și a updata pagina
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://imgur.com/a/e6LBRFn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### •	API pentru adăugarea unei noi cărți după utilizarea butonului de Add Book
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://imgur.com/a/LO2hvVz
+             
 
-### `npm run eject`
+## Fluxul de date
+axios.post("http://localhost:3000/books", this.state.newBookData)
+    .then((response) => {
+      let {books} = this.state; 
+      book.push(response.data);
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Metodele HTTP folosite sunt cele de get și post.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Capturi de ecran din aplicatie
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+https://imgur.com/a/odwqbMS
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 
