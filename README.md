@@ -40,7 +40,17 @@ axios.post("http://localhost:3000/books", this.state.newBookData)
       book.push(response.data);
 ```
 
-Metodele HTTP folosite sunt cele de get și post.
+```javascript
+axios
+      .put("http://localhost:3000/books/" + this.state.editBookData.id, {
+        title,
+        rating,
+      })
+      .then((response) => {
+        this._refreshBooks();
+```
+
+Metodele HTTP folosite sunt cele de POST si PUT.
 
 
 ## Capturi de ecran din aplicatie
